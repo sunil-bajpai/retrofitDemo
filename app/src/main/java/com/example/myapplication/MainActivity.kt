@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var dataList: List<RetrofitDemo>
     lateinit var recyclerView: RecyclerView
-//    lateinit var adapter:DataAdapter
+    lateinit var adapter:DataAdapter
     lateinit var myBinding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +40,9 @@ class MainActivity : AppCompatActivity() {
 
                     Toast.makeText(this@MainActivity, "Success", Toast.LENGTH_LONG).show()
                     dataList = response.body() as List<RetrofitDemo>
-                    myBinding.listGiveAways.adapter=DataAdapter(dataList)
+                    adapter= DataAdapter(dataList)
+                    myBinding.listGiveAways.adapter=adapter
+                    adapter.notifyDataSetChanged()
 
                 }
 
