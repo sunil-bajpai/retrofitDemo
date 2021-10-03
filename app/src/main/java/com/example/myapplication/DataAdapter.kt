@@ -6,6 +6,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.ListItemsBinding
 
+
+// Created dataAdaopter Class for RecycleViiewAdapter
+//Added this comment to learn viewholder Concepts
+
 class DataAdapter(private val names:List<RetrofitDemo>):RecyclerView.Adapter<DataAdapter.ViewHolder>()
 {
  inner class ViewHolder(val myItemView:ListItemsBinding):RecyclerView.ViewHolder(myItemView.root){}
